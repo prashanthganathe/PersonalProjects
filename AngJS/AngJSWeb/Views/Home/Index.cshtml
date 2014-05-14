@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<script src="~/app/myApp/controllers/MainCtrl.js"></script>
+<script src="~/app/User/controllers/UserCtrl.js"></script>
+<br/>
+<div ng-app="myApp">
+
+    <div ng-controller="MainCtrl">
+        {{text}}
+    </div>
+        
+
+    <div ng-app="myApp">
+        <div ng-controller="UserCtrl">
+            <p class="username">Welcome, {{ user.details.username }}</p>
+            <p class="id">User ID: {{ user.details.id }}</p>
+        </div>
+    </div>
+
+
+    </div>
