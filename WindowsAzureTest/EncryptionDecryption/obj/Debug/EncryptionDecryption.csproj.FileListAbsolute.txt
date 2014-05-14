@@ -1,0 +1,9 @@
+D:\VisualstudioPractise\MVC\Test45\WindowsAzureTest\EncryptionDecryption\bin\Debug\EncryptionDecryption.dll
+D:\VisualstudioPractise\MVC\Test45\WindowsAzureTest\EncryptionDecryption\bin\Debug\EncryptionDecryption.pdb
+D:\VisualstudioPractise\MVC\Test45\WindowsAzureTest\EncryptionDecryption\obj\Debug\EncryptionDecryption.dll
+D:\VisualstudioPractise\MVC\Test45\WindowsAzureTest\EncryptionDecryption\obj\Debug\EncryptionDecryption.pdb
+E:\Motifworks\VisualstudioPractise\Test45\WindowsAzureTest\EncryptionDecryption\bin\Debug\EncryptionDecryption.dll
+E:\Motifworks\VisualstudioPractise\Test45\WindowsAzureTest\EncryptionDecryption\bin\Debug\EncryptionDecryption.pdb
+E:\Motifworks\VisualstudioPractise\Test45\WindowsAzureTest\EncryptionDecryption\obj\Debug\EncryptionDecryption.csprojResolveAssemblyReference.cache
+E:\Motifworks\VisualstudioPractise\Test45\WindowsAzureTest\EncryptionDecryption\obj\Debug\EncryptionDecryption.dll
+E:\Motifworks\VisualstudioPractise\Test45\WindowsAzureTest\EncryptionDecryption\obj\Debug\EncryptionDecryption.pdb

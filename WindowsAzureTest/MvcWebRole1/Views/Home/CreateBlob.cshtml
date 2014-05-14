@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "CreateBlob";
+}
+
+<h2>CreateBlob</h2>
+
+
+@using (Html.BeginForm("CreateBlob", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>MailingList</legend>
+
+        <div class="editor-label">
+            HTML Path:
+        </div>
+        <div class="editor-field">
+            <input type="file" name="file" />
+        </div>
+
+
+        <div class="editor-label">
+            Text Path: 
+        </div>
+        <div class="editor-field">
+            <input type="file" name="TxtFile" />
+        </div>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

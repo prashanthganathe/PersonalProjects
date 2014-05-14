@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MvcWebRole.Models.MailingList>
+
+@{
+    ViewBag.Title = "Mailing Lists";
+}
+
+<h2>Mailing Lists</h2>
+
+<p>
+    @Html.ActionLink("Create Table", "Create")
+</p>
+<p>
+    @Html.ActionLink("Create Blob", "CreateBlob")
+</p>
+<p>
+    @Html.ActionLink("Create Queue", "CreateQueue")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ListName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FromEmailAddress)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ListName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FromEmailAddress)
+        </td>
+       
+    </tr>
+}
+
+</table>
