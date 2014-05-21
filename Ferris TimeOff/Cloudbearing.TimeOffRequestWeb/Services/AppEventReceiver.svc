@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Cloudbearing.TimeOffRequestWeb.Services.AppEventReceiver" CodeBehind="AppEventReceiver.svc.cs" %>

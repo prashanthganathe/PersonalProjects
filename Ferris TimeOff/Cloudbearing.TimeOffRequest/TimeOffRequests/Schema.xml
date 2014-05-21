@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="TimeOffRequests" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/TimeOffRequests" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <MetaData>
+    <ContentTypes>
+      
+      
+    <ContentType ID="0x01002dddca50f28546a9bd3f7dfd427f488f" Name="ListFieldsContentType"><FieldRefs><FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" /><FieldRef ID="{3a9cd8d6-1727-4f31-a0b1-da1afb27a5b6}" Name="ExcludeWeekends" /><FieldRef ID="{9a6bd74d-faf7-49ff-8ce6-22c402fb7683}" Name="ExcludeHolidays" /><FieldRef ID="{16f46288-5255-4a1d-8333-f713c349dc44}" Name="IsFullDay" /><FieldRef ID="{2447e5ff-38e1-4e55-ab71-285a22841a0a}" Name="ExcludeOtherDays" /><FieldRef ID="{72eca2e5-688b-4413-91b2-71f7ddbfdce0}" Name="HasAlternateContact" /><FieldRef ID="{4ef233b5-6414-498b-a0fd-ff1cab11f6a6}" Name="IsAccessible" /><FieldRef ID="{78a8d0a4-11f1-4fc2-a9c5-a68a60307a40}" Name="IsPrivate" /><FieldRef ID="{bcead784-0d89-4aac-9c34-3ce8ce37a463}" Name="Status" /><FieldRef ID="{7365d822-5261-4554-89b1-9307bec1e3c5}" Name="Approver1" /><FieldRef ID="{dc5473dd-106f-4e54-911e-fa1c0576fc17}" Name="Approver2" /><FieldRef ID="{6edb6b14-abbe-4787-abe1-2e064f28b9dc}" Name="Approver3" /><FieldRef ID="{89acdd9b-bb01-4de8-828d-88fcdec7e3ba}" Name="StartDateTime" /><FieldRef ID="{b5bbc18b-29c1-4f41-9449-3d232b20be99}" Name="EndDateTime" /><FieldRef ID="{bc7325cb-130a-4dd1-b3e5-51b99d52789a}" Name="RequestedBy" /><FieldRef ID="{17afa6c7-dee6-4ec9-a5df-1464d9c8e07e}" Name="TotalHours" /><FieldRef ID="{30b5ff92-4042-4c1c-9e99-c256390604dd}" Name="TimeOffType" /><FieldRef ID="{2932bd68-803d-4a02-ac5e-f8e0aec451ae}" Name="Approver1Status" /><FieldRef ID="{e0a81b84-bc57-440d-9cda-c34f2f11ab54}" Name="Approver2Status" /><FieldRef ID="{c72e4d8a-6443-434e-a1bb-83564408f1c9}" Name="Approver3Status" /><FieldRef ID="{8fa42bfa-fddf-4431-a275-18b0f657b580}" Name="Approver1Modified" /><FieldRef ID="{b95db526-c1ce-470a-aeb3-76432126e84a}" Name="Approver2Modified" /><FieldRef ID="{53c28a7f-b57a-4293-9662-39bc8186bc37}" Name="Approver3Modified" /><FieldRef ID="{78ad9e0d-2ee9-44b6-b521-f16472514fa1}" Name="RequestID" /><FieldRef ID="{f36d9ffd-ad2c-4fe6-bd26-ccabf3f838d4}" Name="ApproverUrl" /><FieldRef ID="{af104816-1556-4268-bbdc-6b80935b2951}" Name="RequestedByEmail" /><FieldRef ID="{3d9883be-6523-4dd7-9602-7b2f866ed2ad}" Name="Notes" /><FieldRef ID="{4bc83b06-2998-4a32-bbdc-dbd62a904ce3}" Name="CancelStatus" /></FieldRefs></ContentType></ContentTypes>
+    <Fields>
+      
+    <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="$Resources:core,Title;" Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" /><Field Name="ExcludeWeekends" ID="{3a9cd8d6-1727-4f31-a0b1-da1afb27a5b6}" DisplayName="ExcludeWeekends" Type="Boolean" /><Field Name="ExcludeHolidays" ID="{9a6bd74d-faf7-49ff-8ce6-22c402fb7683}" DisplayName="ExcludeHolidays" Type="Boolean" /><Field Name="IsFullDay" ID="{16f46288-5255-4a1d-8333-f713c349dc44}" DisplayName="IsFullDay" Type="Boolean" /><Field Name="ExcludeOtherDays" ID="{2447e5ff-38e1-4e55-ab71-285a22841a0a}" DisplayName="ExcludeOtherDays" Type="Boolean" /><Field Name="HasAlternateContact" ID="{72eca2e5-688b-4413-91b2-71f7ddbfdce0}" DisplayName="HasAlternateContact" Type="Boolean" /><Field Name="IsAccessible" ID="{4ef233b5-6414-498b-a0fd-ff1cab11f6a6}" DisplayName="IsAccessible" Type="Boolean" /><Field Name="IsPrivate" ID="{78a8d0a4-11f1-4fc2-a9c5-a68a60307a40}" DisplayName="IsPrivate" Type="Boolean" /><Field Name="Status" ID="{bcead784-0d89-4aac-9c34-3ce8ce37a463}" DisplayName="Status" Type="Choice" /><Field Name="Approver1" ID="{7365d822-5261-4554-89b1-9307bec1e3c5}" DisplayName="Approver1" Type="User" /><Field Name="Approver2" ID="{dc5473dd-106f-4e54-911e-fa1c0576fc17}" DisplayName="Approver2" Type="User" /><Field Name="Approver3" ID="{6edb6b14-abbe-4787-abe1-2e064f28b9dc}" DisplayName="Approver3" Type="User" /><Field Name="StartDateTime" ID="{89acdd9b-bb01-4de8-828d-88fcdec7e3ba}" DisplayName="StartDateTime" Type="DateTime" /><Field Name="EndDateTime" ID="{b5bbc18b-29c1-4f41-9449-3d232b20be99}" DisplayName="EndDateTime" Type="DateTime" /><Field Name="RequestedBy" ID="{bc7325cb-130a-4dd1-b3e5-51b99d52789a}" DisplayName="RequestedBy" Type="User" /><Field Name="TotalHours" ID="{17afa6c7-dee6-4ec9-a5df-1464d9c8e07e}" DisplayName="TotalHours" Type="Number" /><Field Name="TimeOffType" ID="{30b5ff92-4042-4c1c-9e99-c256390604dd}" DisplayName="TimeOffType" Type="Text" /><Field Name="Approver1Status" ID="{2932bd68-803d-4a02-ac5e-f8e0aec451ae}" DisplayName="Approver1Status" Type="Choice" /><Field Name="Approver2Status" ID="{e0a81b84-bc57-440d-9cda-c34f2f11ab54}" DisplayName="Approver2Status" Type="Choice" /><Field Name="Approver3Status" ID="{c72e4d8a-6443-434e-a1bb-83564408f1c9}" DisplayName="Approver3Status" Type="Choice" /><Field Name="Approver1Modified" ID="{8fa42bfa-fddf-4431-a275-18b0f657b580}" DisplayName="Approver1Modified" Type="DateTime" /><Field Name="Approver2Modified" ID="{b95db526-c1ce-470a-aeb3-76432126e84a}" DisplayName="Approver2Modified" Type="DateTime" /><Field Name="Approver3Modified" ID="{53c28a7f-b57a-4293-9662-39bc8186bc37}" DisplayName="Approver3Modified" Type="DateTime" /><Field Name="RequestID" ID="{78ad9e0d-2ee9-44b6-b521-f16472514fa1}" DisplayName="RequestID" Type="Text" /><Field Name="ApproverUrl" ID="{f36d9ffd-ad2c-4fe6-bd26-ccabf3f838d4}" DisplayName="ApproverUrl" Type="Note" /><Field Name="RequestedByEmail" ID="{af104816-1556-4268-bbdc-6b80935b2951}" DisplayName="RequestedByEmail" Type="Text" /><Field Name="Notes" ID="{3d9883be-6523-4dd7-9602-7b2f866ed2ad}" DisplayName="Notes" Type="Note" /><Field Name="CancelStatus" ID="{4bc83b06-2998-4a32-bbdc-dbd62a904ce3}" DisplayName="CancelStatus" Type="Text" /></Fields>
+    <Views>
+      
+      
+    <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          
+        <FieldRef Name="LinkTitleNoMenu"></FieldRef></ViewFields>
+        <Query>
+          <OrderBy>
+            
+          <FieldRef Name="Modified" Ascending="FALSE"></FieldRef></OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+        </ParameterBindings>
+      </View><View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <JSLink>clienttemplates.js</JSLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          
+        <FieldRef Name="LinkTitle"></FieldRef><FieldRef Name="ExcludeWeekends" /><FieldRef Name="ExcludeHolidays" /><FieldRef Name="IsFullDay" /><FieldRef Name="ExcludeOtherDays" /><FieldRef Name="HasAlternateContact" /><FieldRef Name="IsAccessible" /><FieldRef Name="IsPrivate" /><FieldRef Name="Status" /><FieldRef Name="Approver1" /><FieldRef Name="Approver2" /><FieldRef Name="Approver3" /><FieldRef Name="StartDateTime" /><FieldRef Name="EndDateTime" /><FieldRef Name="RequestedBy" /><FieldRef Name="TotalHours" /><FieldRef Name="TimeOffType" /><FieldRef Name="Approver1Status" /><FieldRef Name="Approver2Status" /><FieldRef Name="Approver3Status" /><FieldRef Name="Approver1Modified" /><FieldRef Name="Approver2Modified" /><FieldRef Name="Approver3Modified" /><FieldRef Name="RequestID" /><FieldRef Name="ApproverUrl" /><FieldRef Name="RequestedByEmail" /><FieldRef Name="Modified" /><FieldRef Name="Created" /><FieldRef Name="Editor" /><FieldRef Name="Author" /><FieldRef Name="Notes" /><FieldRef Name="CancelStatus" /></ViewFields>
+        <Query>
+          <OrderBy>
+            
+          <FieldRef Name="ID"></FieldRef></OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View></Views>
+    <Forms>
+      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>

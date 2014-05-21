@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="97732565-5565-41cb-bad8-2312be0832c0" solutionId="97732565-5565-41cb-bad8-2312be0832c0" resetWebServer="false" sharePointProductVersion="15.0" name="Cloudbearing.TimeOffRequest" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="2e9d7893-655f-40c1-ac70-9a7e4436211d" />
+    <featureReference itemId="d24d7545-3a93-4ea9-8241-60e788922047" />
+  </features>
+</package>

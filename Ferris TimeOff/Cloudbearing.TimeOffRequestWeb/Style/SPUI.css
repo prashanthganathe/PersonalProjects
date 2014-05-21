@@ -1,0 +1,135 @@
+﻿
+
+        .body,div,element.style {
+       font-family: 'Segoe UI', Segoe, Tahoma, Helvetica, Arial, sans-serif;
+        font-size: 13px;
+          font-weight:300;
+        }
+
+
+           .info{
+     background-color: #4ea5cd;
+     border-color: #3b8eb5;
+}
+
+        .message p{
+     margin: 0;                                                  
+}
+
+        .success{
+     background-color: #61b832;
+     border-color: #55a12c;
+}
+
+    .tileview-tile-titleMediumCollapsed{
+    display: table-cell;
+    height: 36px;
+    overflow: hidden;
+    vertical-align: bottom;
+}
+.tileview-tile-titleMediumExpanded{
+    display: table-cell;
+    max-height: 52px;
+    overflow: hidden;
+}
+.tileview-tile-root{
+    width:160px;
+    height:160px;
+    float:left;
+}
+.tileview-tile-content{
+    width:150px;
+    height:150px;
+    /*background-color: #0072C6;*/
+    position: relative;
+    overflow: hidden;
+    background-color: #0072C6;
+}
+.tileview-tile-detailsBox{
+    width: 150px;
+    height: 150px;
+    top: 100px;
+    left: 0px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+}
+.tileview-tile-content > a > span{
+    height:150px;
+    width:150px;
+    position:relative;
+    display:inline-block;
+    overflow:hidden;
+}
+.tileview-tile-content > a > span > img{
+    top:0px;
+    position:absolute;
+    width:100%;
+}
+.tileview-tile-detailsListMedium{
+    height: 150px;
+    overflow: hidden;
+    padding: 6px 10px 10px;
+    margin: 0px;
+    list-style-type:none;
+    font-family: 'Segoe UI', Segoe, Tahoma, Helvetica, Arial, sans-serif;
+}
+.tileview-tile-descriptionMedium{
+    padding-top:15px;
+}
+.tileview-tile-tileTextMediumCollapsed{
+    max-height: 36px;
+    overflow: hidden;
+    display:block;
+}
+.tileImg {
+    text-align:center; margin-left:40px; margin-top:40px;  vertical-align:central;  height:64px;
+     width:64px !important;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+
+     background-color: white;
+     color:black;
+}
+ui-widget {
+     font-family: 'Segoe UI', Segoe, Tahoma, Helvetica, Arial, sans-serif;
+}
+
+
+   .ui-helper-reset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	line-height: 1.5;
+	text-decoration: none;
+	font-size: 100%;
+	list-style: none;
+}
+
+         .divSingleline{       
+         background-color: #ede6ee;
+         float: left;
+         font-size:.9em;
+         font-family: 'Segoe UI', Tahoma, Arial;
+     }
+
+           .divinner{
+         float: left;
+         font-size:1em;
+         font-family: 'Segoe UI', Tahoma, Arial;
+        
+     }
+        .incheight {
+             line-height:1.7em;
+
+        }
+
+.restruct {
+font-weight:300 !important;
+border:0px !important;
+line-height:.7 !important;
+}
+
+

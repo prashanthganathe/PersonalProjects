@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Workflow4App" DefaultFile="Workflow.xaml" SupportedTrustLevels="All" SupportedDeploymentScopes="AppPackage" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Workflow.xaml" Target="CancelTimeOffWorkflow\" Type="AppPackage" />
+  </Files>
+  <ExtensionData>
+    <ExtensionDataItem Key="WorkflowAssociation.EventSourceGuid" Value="Lists/TimeOffRequests" />
+    <ExtensionDataItem Key="WorkflowAssociation.HistoryListId" Value="Lists/WorkflowHistoryList" />
+    <ExtensionDataItem Key="WorkflowAssociationItemAdded.Enabled" Value="false" />
+    <ExtensionDataItem Key="WorkflowAssociationItemUpdated.Description" Value="CancelTimeOffWorkflow - ItemUpdated" />
+    <ExtensionDataItem Key="WorkflowAssociationItemUpdated.DisplayName" Value="CancelTimeOffWorkflow - ItemUpdated" />
+    <ExtensionDataItem Key="WorkflowAssociationItemUpdated.Enabled" Value="true" />
+    <ExtensionDataItem Key="WorkflowAssociationItemUpdated.EventSourceGUID" Value="Lists/TimeOffRequests" />
+    <ExtensionDataItem Key="WorkflowAssociationItemUpdated.EventType" Value="ItemUpdated" />
+    <ExtensionDataItem Key="WorkflowAssociationItemUpdated.HistoryListId" Value="Lists/WorkflowHistoryList" />
+    <ExtensionDataItem Key="WorkflowAssociationItemUpdated.Id" Value="45e5ff30-7677-49bf-8c16-299de69abfa2" />
+    <ExtensionDataItem Key="WorkflowAssociationItemUpdated.TaskListId" Value="" />
+    <ExtensionDataItem Key="WorkflowAssociationManualStart.Enabled" Value="false" />
+    <ExtensionDataItem Key="WorkflowDefinition.Description" Value="My 'CancelTimeOffWorkflow' Workflow" />
+    <ExtensionDataItem Key="WorkflowDefinition.DisplayName" Value="CancelTimeOffWorkflow" />
+    <ExtensionDataItem Key="WorkflowDefinition.Id" Value="d4882f0e-e9a6-4d52-86dd-b0f4c62dbbeb" />
+    <ExtensionDataItem Key="WorkflowDefinition.RestrictAssociationToId" Value="Lists/TimeOffRequests" />
+    <ExtensionDataItem Key="WorkflowDefinition.RestrictAssociationToType" Value="List" />
+  </ExtensionData>
+</ProjectItem>

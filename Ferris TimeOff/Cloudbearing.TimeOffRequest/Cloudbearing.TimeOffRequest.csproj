@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1E8CCCD7-D2EE-4FEC-B404-174ADBD76169}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cloudbearing.TimeOffRequest</RootNamespace>
+    <AssemblyName>Cloudbearing.TimeOffRequest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <IncludeAssemblyInPackage>False</IncludeAssemblyInPackage>
+    <ProjectMode>SharePointApp</ProjectMode>
+    <AppFeaturePartId>{0ca2187d-84b3-48d2-ba13-e86bdef4f713}</AppFeaturePartId>
+    <WspPartId>{80649159-c962-44c5-8a01-ba6cd80181e3}</WspPartId>
+    <WorkflowPartId>{5ce14799-9a5f-4ae0-941e-735ee338ba8e}</WorkflowPartId>
+    <CspkgPartId>{96a99274-c297-4deb-a5f0-15b27f8b91cb}</CspkgPartId>
+    <SqlPackagePartId>{a04fc85e-98d0-488f-ac64-6dc05b913c00}</SqlPackagePartId>
+    <ActivePublishProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="AppIconold.png" />
+    <Content Include="ConfigList\ConfigListInstance\Elements.xml" />
+    <Content Include="ConfigList\Elements.xml" />
+    <Content Include="ConfigList\Schema.xml" />
+    <Content Include="DeptCalendarList\DeptCalendarListInstance\Elements.xml" />
+    <Content Include="DeptCalendarList\Elements.xml" />
+    <Content Include="DeptCalendarList\Schema.xml" />
+    <Content Include="Elements.xml" />
+    <Content Include="Errors\Elements.xml" />
+    <Content Include="Errors\ErrorsInstance\Elements.xml" />
+    <Content Include="Errors\Schema.xml" />
+    <Content Include="Features\Feature1\Feature1.Template.xml">
+      <DependentUpon>Feature1.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\Feature2\Feature2.Template.xml">
+      <DependentUpon>Feature2.feature</DependentUpon>
+    </Content>
+    <Content Include="HolidayList\Elements.xml" />
+    <Content Include="HolidayList\HolidayListInstance\Elements.xml" />
+    <Content Include="HolidayList\Schema.xml" />
+    <Content Include="Images\AppIcon.png" />
+    <Content Include="Images\time_off_icon_2014_96x96.png" />
+    <Content Include="logon.png" />
+    <Content Include="OtherTimeOffDaysList\Elements.xml" />
+    <Content Include="OtherTimeOffDaysList\OtherTimeOffDaysListInstance\Elements.xml" />
+    <Content Include="OtherTimeOffDaysList\Schema.xml" />
+    <Content Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </Content>
+    <Content Include="Pages\Default.aspx" />
+    <Content Include="Pages\Elements.xml" />
+    <Content Include="Pages\Page1.aspx" />
+    <Content Include="scripts\CSRListView.js" />
+    <Content Include="appIcon.png">
+      <OpcRelationship>manifest-icon</OpcRelationship>
+    </Content>
+    <Content Include="TimeOffRequests\Elements.xml" />
+    <Content Include="TimeOffRequests\Schema.xml" />
+    <Content Include="TimeOffRequests\TimeOffRequestsInstance\Elements.xml" />
+    <Content Include="TimeOffTypes\Elements.xml" />
+    <Content Include="TimeOffTypes\Schema.xml" />
+    <Content Include="TimeOffTypes\TimeOffTypesInstance\Elements.xml" />
+    <Content Include="WorkflowHistoryList\Elements.xml" />
+    <Content Include="WorkflowTaskList\Elements.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppManifestFile Include="AppManifest.xml">
+      <SubType>Designer</SubType>
+    </AppManifestFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cloudbearing.TimeOffRequestWeb\Cloudbearing.TimeOffRequestWeb.csproj">
+      <Project>{46CFE273-7A76-48C0-8B46-C11F4D4DEC06}</Project>
+      <Name>Cloudbearing.TimeOffRequestWeb</Name>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <OutputItemType>SharePointWebProjectOutput</OutputItemType>
+      <RoleName>Cloudbearing.TimeOffRequestWeb</RoleName>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="AjaxMin">
+      <HintPath>packages\AjaxMin.5.8.5172.27710\lib\net40\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Activities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Extensions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=69c3241e6f0468ca, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=15.0.0.0">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=15.0.0.0">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.DesignTime.Activities, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="CancelTimeOffWorkflow\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3bcc1838-814e-4788-a94c-1ffbf29ef601}</SharePointProjectItemId>
+    </None>
+    <None Include="ConfigList\ConfigListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c728412d-d429-44ef-a050-7133a32b7360}</SharePointProjectItemId>
+    </None>
+    <None Include="ConfigList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{872681a5-06b2-490f-a859-39e8d48f1804}</SharePointProjectItemId>
+    </None>
+    <None Include="DeptCalendarList\DeptCalendarListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{205ee7e1-7d18-4a1a-af6e-f44433334e76}</SharePointProjectItemId>
+    </None>
+    <None Include="DeptCalendarList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{faabeab4-9045-4fe2-8094-d2e2c16562e1}</SharePointProjectItemId>
+    </None>
+    <None Include="Errors\ErrorsInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8362c8ce-f114-4057-b9c2-d07936b5832d}</SharePointProjectItemId>
+    </None>
+    <None Include="Errors\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{bc6613fa-6b2f-409f-8f85-41147e675422}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\Feature1\Feature1.feature">
+      <FeatureId>{2e9d7893-655f-40c1-ac70-9a7e4436211d}</FeatureId>
+    </None>
+    <None Include="Features\Feature2\Feature2.feature">
+      <FeatureId>{d24d7545-3a93-4ea9-8241-60e788922047}</FeatureId>
+    </None>
+    <None Include="HolidayList\HolidayListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{24ea4605-6180-4285-bc8e-ca58ac872613}</SharePointProjectItemId>
+    </None>
+    <None Include="HolidayList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{42f9db8a-ec42-4cd1-9b0f-359390eedb16}</SharePointProjectItemId>
+    </None>
+    <None Include="OtherTimeOffDaysList\OtherTimeOffDaysListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7c96e6f2-3372-4fe8-a57d-f30919e4b2b6}</SharePointProjectItemId>
+    </None>
+    <None Include="OtherTimeOffDaysList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{630955e3-16cb-432a-bc3e-848d13d0f728}</SharePointProjectItemId>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{b7d8f479-f253-4438-a64c-a4c417a53592}</PackageId>
+    </None>
+    <None Include="Pages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4f5b61ea-f2ec-4500-abab-028702d5b9d4}</SharePointProjectItemId>
+    </None>
+    <None Include="SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{11e45160-6fa2-411e-870e-9e243043eb8f}</SharePointProjectItemId>
+    </None>
+    <None Include="TimeOffRequest Approval Workflow\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{65eda941-b09e-4c1d-a377-001e310e8ce8}</SharePointProjectItemId>
+    </None>
+    <None Include="TimeOffRequests\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{efe3e80e-7479-4ed8-9bf6-a4ba939d73ab}</SharePointProjectItemId>
+    </None>
+    <None Include="TimeOffRequests\TimeOffRequestsInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2f36c73f-3b3e-481e-8881-0309f6f459fa}</SharePointProjectItemId>
+    </None>
+    <None Include="TimeOffTypes.stp" />
+    <None Include="TimeOffTypes\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{43b14ab6-8fb2-4856-adb9-cde3120165b9}</SharePointProjectItemId>
+    </None>
+    <None Include="TimeOffTypes\TimeOffTypesInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e6ce5a74-4577-4abc-b5ab-e6db2fd0ec2c}</SharePointProjectItemId>
+    </None>
+    <None Include="WorkflowHistoryList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e72f24ed-d47e-40db-881e-fe43cfb9516e}</SharePointProjectItemId>
+    </None>
+    <None Include="WorkflowTaskList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8b72ad35-d716-4815-8b16-75f08542e119}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="TimeOffRequest Approval Workflow\Workflow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="CancelTimeOffWorkflow\Workflow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\app.publish\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

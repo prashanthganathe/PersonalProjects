@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Workflow4App" DefaultFile="Workflow.xaml" SupportedTrustLevels="All" SupportedDeploymentScopes="AppPackage" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Workflow.xaml" Target="TimeOffRequest Approval Workflow\" Type="AppPackage" />
+  </Files>
+  <ExtensionData>
+    <ExtensionDataItem Key="WorkflowAssociation.EventSourceGuid" Value="Lists/TimeOffRequests" />
+    <ExtensionDataItem Key="WorkflowAssociation.EventSourceGUID" Value="Lists/TimeOffRequests" />
+    <ExtensionDataItem Key="WorkflowAssociation.HistoryListId" Value="Lists/WorkflowHistoryList" />
+    <ExtensionDataItem Key="WorkflowAssociation.TaskListId" Value="Lists/WorkflowTaskList" />
+    <ExtensionDataItem Key="WorkflowAssociationItemAdded.Description" Value="TimeOffRequest Approval Workflow - ItemAdded" />
+    <ExtensionDataItem Key="WorkflowAssociationItemAdded.DisplayName" Value="TimeOffRequest Approval Workflow - ItemAdded" />
+    <ExtensionDataItem Key="WorkflowAssociationItemAdded.Enabled" Value="true" />
+    <ExtensionDataItem Key="WorkflowAssociationItemAdded.EventSourceGUID" Value="Lists/TimeOffRequests" />
+    <ExtensionDataItem Key="WorkflowAssociationItemAdded.EventType" Value="ItemAdded" />
+    <ExtensionDataItem Key="WorkflowAssociationItemAdded.HistoryListId" Value="Lists/WorkflowHistoryList" />
+    <ExtensionDataItem Key="WorkflowAssociationItemAdded.Id" Value="ef6b7e25-35a8-4bf4-a7e8-5b11e4237617" />
+    <ExtensionDataItem Key="WorkflowAssociationItemAdded.TaskListId" Value="Lists/WorkflowTaskList" />
+    <ExtensionDataItem Key="WorkflowAssociationItemUpdated.Description" Value="TimeOffRequest Approval Workflow - ItemUpdated" />
+    <ExtensionDataItem Key="WorkflowAssociationItemUpdated.DisplayName" Value="TimeOffRequest Approval Workflow - ItemUpdated" />
+    <ExtensionDataItem Key="WorkflowAssociationItemUpdated.Enabled" Value="true" />
+    <ExtensionDataItem Key="WorkflowAssociationItemUpdated.EventSourceGUID" Value="Lists/TimeOffRequests" />
+    <ExtensionDataItem Key="WorkflowAssociationItemUpdated.EventType" Value="ItemUpdated" />
+    <ExtensionDataItem Key="WorkflowAssociationItemUpdated.HistoryListId" Value="Lists/WorkflowHistoryList" />
+    <ExtensionDataItem Key="WorkflowAssociationItemUpdated.Id" Value="daddfdad-249f-4125-8db2-c567c0ced710" />
+    <ExtensionDataItem Key="WorkflowAssociationItemUpdated.TaskListId" Value="Lists/WorkflowTaskList" />
+    <ExtensionDataItem Key="WorkflowAssociationManualStart.Description" Value="TimeOffRequest Approval Workflow - WorkflowStart" />
+    <ExtensionDataItem Key="WorkflowAssociationManualStart.DisplayName" Value="TimeOffRequest Approval Workflow - WorkflowStart" />
+    <ExtensionDataItem Key="WorkflowAssociationManualStart.Enabled" Value="true" />
+    <ExtensionDataItem Key="WorkflowAssociationManualStart.EventSourceGUID" Value="Lists/TimeOffRequests" />
+    <ExtensionDataItem Key="WorkflowAssociationManualStart.EventType" Value="WorkflowStart" />
+    <ExtensionDataItem Key="WorkflowAssociationManualStart.HistoryListId" Value="Lists/WorkflowHistoryList" />
+    <ExtensionDataItem Key="WorkflowAssociationManualStart.Id" Value="c6509a9d-fd0a-44ed-bd77-7a37fe31aa10" />
+    <ExtensionDataItem Key="WorkflowAssociationManualStart.TaskListId" Value="Lists/WorkflowTaskList" />
+    <ExtensionDataItem Key="WorkflowDefinition.Description" Value="My 'TimeOffRequest Approval Workflow' Workflow" />
+    <ExtensionDataItem Key="WorkflowDefinition.DisplayName" Value="TimeOffRequest Approval Workflow" />
+    <ExtensionDataItem Key="WorkflowDefinition.Id" Value="f8cbf987-b439-4360-a984-99aa4fcdd5e1" />
+    <ExtensionDataItem Key="WorkflowDefinition.RestrictAssociationToId" Value="Lists/TimeOffRequests" />
+    <ExtensionDataItem Key="WorkflowDefinition.RestrictAssociationToType" Value="List" />
+  </ExtensionData>
+</ProjectItem>

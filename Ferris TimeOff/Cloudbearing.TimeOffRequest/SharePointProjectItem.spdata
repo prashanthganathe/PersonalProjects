@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Type="ElementManifest" />
+    <ProjectItemFile Source="app.config" Type="ElementFile" />
+    <ProjectItemFile Source="scripts\CSRListView.js" Target="scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="logon.png" Type="ElementFile" />
+    <ProjectItemFile Source="TimeOffTypes.stp" Type="ElementFile" />
+    <ProjectItemFile Source="Images\time_off_icon_2014_96x96.png" Target="Images\" Type="ElementFile" />
+    <ProjectItemFile Source="appIcon.png" Type="ElementFile" />
+    <ProjectItemFile Source="Images\AppIcon.png" Target="Images\" Type="ElementFile" />
+  </Files>
+</ProjectItem>
