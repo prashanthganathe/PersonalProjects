@@ -1,0 +1,21 @@
+<!doctype html>
+<html data-ng-app>
+    <head>
+     <title>Angular JS Hello world</title>
+    <link rel=stylesheet  type="text/css" href="style.css">    
+    </head>
+    
+    
+    <body  data-ng-init="peoplesdf=[{name:'Dae', city:'A'},{name:'Two', city:'A'},{name:'Three', city:'A'}]">
+        
+         <ul>
+         <li data-ng-repeat="person in peoplesdf">{{person.name}}</li>
+        </ul>
+        
+        <table>
+            <tr><td></td></tr>
+        </table>
+        <script type="application/javascript" src="angular.js"></script>
+    </body>
+
+</html>

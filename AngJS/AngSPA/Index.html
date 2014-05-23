@@ -1,0 +1,28 @@
+<!doctype html>
+<html data-ng-app>
+    <head>
+     <title>Angular JS Hello world</title>
+    <link rel=stylesheet  type="text/css" href="style.css">    
+    </head>
+    
+    
+    <body  data-ng-init="data={name:'Firstname', isVisible:true,loggedIn:false, status:'navy'}">
+        
+        <div ng-cloak>
+          <div ng-switch on="data.loggedIn">
+              <div ng-switch-when="true">
+             Welcome {{data.name}}
+                   </div>
+              <div ng-switch-default ng-class="data.status">Login</div>
+            </div>
+            
+        </div>
+       
+        <div ng-show="data.isVisible">
+           Name:<input type=text ng-model="data.name" />
+            {{data.name}}
+        </div>
+        <script type="application/javascript" src="angular.js"></script>
+    </body>
+
+</html>

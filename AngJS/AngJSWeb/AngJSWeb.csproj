@@ -172,7 +172,8 @@
     <Content Include="app\app.js" />
     <Content Include="app\directives\directive1\directive1.html" />
     <Content Include="app\directives\directive1\directive1.js" />
-    <Content Include="app\myApp\controllers\MainCtrl.js" />
+    <Content Include="app\myApp\controllers\app.js" />
+    <Content Include="app\myApp\controllers\myappCntrl.js" />
     <Content Include="app\services\cache\cache1.js" />
     <Content Include="app\services\cache\cache1.spec.js" />
     <Content Include="app\services\models\Model1.spec.js" />

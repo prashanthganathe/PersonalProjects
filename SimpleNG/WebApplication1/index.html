@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="customerApp">
+<head>
+    <title></title>
+
+    <link href="styles.css" rel="stylesheet" />
+</head>
+<body ng-controller="customerController">
+    <h2>Customer Details</h2>
+    Filter: <input type="text"  />
+    <br /><br />
+    <table>
+        <tr>
+            <th ng-click="doSort('name')">Name</th>
+            <th ng-click="doSort('age')"> Age</th>
+            <th ng-click="doSort('city')">City</th>
+            <th ng-click="doSort('Date')">Date</th>
+        </tr>
+
+
+        <tr ng-repeat="cust in customers">
+            <td>{{cust.Name}}</td>
+            <td>{{cust.Age}}</td>
+            <td>{{cust.City}}</td>
+            <td>{{cust.Date}}</td>
+
+        </tr>
+
+    </table>
+
+
+
+
+    <script type="text/javascript" src="angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="CustomerController.js"></script>
+</body>
+</html>
