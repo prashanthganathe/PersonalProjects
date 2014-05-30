@@ -64,42 +64,31 @@ namespace Cloudbearing.TimeOffRequestWeb.Pages
 
         public void filltime()
         {
-            string a = string.Empty;
-            List<Tuple<int, string>> datetime = new List<Tuple<int, string>>();
             List<string> list = new List<string>();
-            list.Add(" ");
-            for (int i = 1; i <= 12; i++)
+            DateTime date = new DateTime(2014, 01, 01);
+            DateTime time;
+            string dummystring = ""; string hours;
+
+            list.Add("12:00 AM");
+            for (int i = 1; i < 24; i++)
             {
-                datetime.Add(new Tuple<int, string>(i, "AM"));
-                if (datetime[i - 1].Item1.ToString().Length == 1)
-                {
-                    list.Add(" " + datetime[i - 1].Item1 + ":00" + " " + datetime[i - 1].Item2);
-                }
+                time = date.AddHours(i);
+                if ((i < 10) || (i > 12 && i < 22))
+                    dummystring = " ";
                 else
-                {
-                    list.Add(datetime[i - 1].Item1 + ":00" + " " + datetime[i - 1].Item2);
-                }
-                if (i == 12)
-                {
-                    for (int j = 1; j <= 12; j++)
-                    {
-                        datetime.Add(new Tuple<int, string>(j, "PM"));
-                        if (datetime[j - 1].Item1.ToString().Length == 1)
-                        {
-                            list.Add(" " + datetime[j + 11].Item1 + ":00" + " " + datetime[j + 11].Item2);
-                        }
-                        else
-                            if (datetime[j - 1].Item1.ToString().Length == 1)
-                            {
-                                list.Add(datetime[j + 11].Item1 + ":00" + " " + datetime[j + 11].Item2);
-                            }
-                    }
-                }
+                    dummystring = "";
+                hours = time.Hour > 12 ? (time.Hour - 12).ToString() : time.Hour.ToString();
+
+                list.Add(dummystring + hours + ":00 " + time.ToString("tt").ToUpper());
             }
+            list.Add("11:59 PM");
             ddlsrttime.DataSource = list;
             ddlsrttime.DataBind();
             this.ddlendtime.DataSource = list;
             ddlendtime.DataBind();
+
+            ddlsrttime.SelectedValue = " 8:00 AM";
+            ddlendtime.SelectedValue = "11:59 PM";
         }
         public bool VerifyApprover()
         {

@@ -43,11 +43,12 @@ namespace Cloudbearing.TimeOffRequestWeb
             return objUser;
         }
 
-        public User GetCurrentUserByApp()
+        public User GetCurrentUserByApp(SharePointContext spContext=null)
         {
             User objUser;
           //  using (ClientContext clientContext = TokenHelper.GetClientContextWithAccessToken(sharepointUrl, accessToken))
-            var spContext =    SharePointContextProvider.Current.GetSharePointContext(HttpContext.Current);
+            if(spContext==null)
+              spContext =    SharePointContextProvider.Current.GetSharePointContext(HttpContext.Current);
             using (var clientContext = spContext.CreateUserClientContextForSPHost())
             {
                 //try

@@ -48,7 +48,8 @@
             function GetDate(date) {
                 var MyDate_String_Value = date;
                 var value = new Date(parseInt(MyDate_String_Value.replace(/(^.*\()|([+-].*$)/g, '')));
-                var dat = value.getMonth() + 1 + "/" + value.getDate() + "/" + value.getFullYear();
+                var min = value.getMinutes() > 9 ? value.getMinutes() : '0' + value.getMinutes();
+                var dat = value.getMonth() + 1 + "/" + value.getDate() + "/" + value.getFullYear() + " " + value.getHours() + ":" + min;
                 return dat;
             }
 
@@ -60,7 +61,8 @@
                     ret += "," + App2;
                 if (App3 != null)
                     ret += "," + App3;
-                return ret == undefined ? "No Approver(s) Assigned." : ret;
+                ret == undefined ? "No Approver(s) Assigned." : ret;
+                return ret.substring(0, 25) + "...";
             }
             function GetListTemplateLevel3(items) {
                 var listtemplate = "<div class='list level3' style='height:auto !important; style='width:800px;display: block; margin-left:100px !important;'> ";
@@ -261,12 +263,12 @@
     }
     .enddate {
     height: auto;
-    width: 8%;
+    width: 10%;
     float: left;
     }
     .accessible {
     height: auto;
-    width: 6%;
+    width: 8%;
     float: left;
     }
     .alternate {
@@ -276,7 +278,7 @@
     }
     .approver {
     height: auto;
-    width: 26%;
+    width: 23%;
     float: left;
 
     }
@@ -396,12 +398,12 @@
        <div class="divSingleline ui-helper-reset ui-state-default " style="width:9%; padding-right:8px;height:35px;">Status</div>
               <div class="divSingleline ui-helper-reset ui-state-default " style="width:10%; padding-right:8px;height:35px;">Requestor</div>            
               <div class="divSingleline ui-helper-reset ui-state-default " style="width:12%; padding-right:8px;height:35px;">TimeOffType</div>
-              <div class="divSingleline ui-helper-reset ui-state-default " style="width:6%; padding-right:8px;height:35px;">Starts</div>
-              <div class="divSingleline ui-helper-reset ui-state-default " style="width:6%; padding-right:8px;height:35px;">Ends</div>
+              <div class="divSingleline ui-helper-reset ui-state-default " style="width:7%; padding-right:8px;height:35px;">Starts</div>
+              <div class="divSingleline ui-helper-reset ui-state-default " style="width:7%; padding-right:8px;height:35px;">Ends</div>
               <div class="divSingleline ui-helper-reset ui-state-default " style="width:5%; padding-right:8px;height:35px;">Accesible</div>
               <div class="divSingleline ui-helper-reset ui-state-default " style="width:5%; padding-right:8px;height:35px;">Alternate</div>
               <div class="divSingleline ui-helper-reset ui-state-default " style="width:18%; padding-right:8px;height:35px;">Approver</div>          
-              <div class="divSingleline ui-helper-reset ui-state-default " style="width:9.5%; padding-right:7px;height:35px;">Hours</div>  <br />    
+              <div class="divSingleline ui-helper-reset ui-state-default " style="width:7.5%; padding-right:7px;height:35px;">Hours</div>  <br />    
              
   <div id="faqscontainer"  runat="server"  ClientIDMode="Static"  class="accordian" style="width:1250px !important;margin-top:20px;">
     <asp:Repeater ID="repAccordian" runat="server">

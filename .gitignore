@@ -154,3 +154,7 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+
+/Ferris TimeOff/Cloudbearing.TimeOffRequest/packages
+
+/SPAApp/packages

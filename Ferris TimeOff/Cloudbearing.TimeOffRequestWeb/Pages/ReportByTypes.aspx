@@ -38,7 +38,8 @@
             function GetDate(date) {
                 var MyDate_String_Value = date;
                 var value = new Date(parseInt(MyDate_String_Value.replace(/(^.*\()|([+-].*$)/g, '')));
-                var dat = value.getMonth() + 1 + "/" + value.getDate() + "/" + value.getFullYear();
+                var min = value.getMinutes() > 9 ? value.getMinutes() : '0' + value.getMinutes();
+                var dat = value.getMonth() + 1 + "/" + value.getDate() + "/" + value.getFullYear() + " " + value.getHours() + ":" + min;
                 return dat;
             }
 
@@ -50,7 +51,8 @@
                     ret += "," + App2;
                 if (App3 != null)
                     ret += "," + App3;
-                return ret == undefined ? "No Approver(s) Assigned." : ret;
+                ret == undefined ? "No Approver(s) Assigned." : ret;
+                return ret.substring(0, 25) + "...";
             }
             function GetListTemplateLevel3(items) {
                 var listtemplate = "<div class='list level3' style='height:auto !important; style='width:800px;display: block; margin-left:100px !important;'> ";
@@ -232,7 +234,7 @@
     }
     .status{
     height:auto;  
-    width: 13%; 
+    width: 12%; 
     float: left;
     }
 
@@ -248,7 +250,7 @@
     }
     .accessible {
     height: auto;
-    width: 5%;
+    width: 6%;
     float: left;
     }
     .alternate {

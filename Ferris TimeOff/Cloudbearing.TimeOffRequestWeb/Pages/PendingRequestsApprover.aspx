@@ -48,6 +48,34 @@
                window.location = approvalPage + newQS;
            });
 
+           $(document).on('click', '.ApproverMe', function (e) {
+               //var requestid = $(this).parent().parent()[0].id;
+               //var newQS = "&RequestID=" + requestid;
+               //var approvalPage = window.location.href.replace('PendingRequestsApprover.aspx', 'ApprovalForm.aspx');
+               //approvalPage = removeParameter(approvalPage, "RequestID");
+               //window.location = approvalPage + newQS;
+               var requestid = $(this).parent().parent()[0].id;
+
+               $.ajax({
+
+
+                   url: "PendingRequestsApprover.aspx/ApproveRequest",
+                   data: JSON.stringify({ 'requestid': requestid}),
+                   type: "POST",
+                   contentType: "application/json;charset=utf-8",
+                   dataType: "json",
+                   cache: false,
+                   success: function (result) {
+                       //TODO cancel the request and refresh the page             
+                       alert(result.d);
+                       location.reload(true);
+                   },
+                   error: function (request, status, error) {
+                   }
+               });
+           });
+           
+
 
            function DeleteRequest(requestid, currentitemStartDate, currentitemEndDate, currentitemrequestedby, currentitemtype, status, e) {
                $.ajax({
@@ -162,6 +190,7 @@
                                                 <td id="Td7" runat="server">Total Hours</td>  
                                                 <td id="Td4" runat="server">Status</td> 
                                                <td id="Td5" ></td>   
+                                               <%-- <td id="Td5" ></td>--%>   
                                             </tr>  
                                             <tr id="ItemPlaceholder" runat="server">  
                                             </tr>                   
@@ -182,6 +211,7 @@
 
                                        <%--  <td id="<%# Eval("RequestID").ToString()%>"> <div id='lblbutton'    runat="server"> <%# Eval("Status").ToString() == "Pending Approval" ? "<input type='button' value='Cancel' class='newAbsencesButton cancel' style=' background-color:rgba(21, 161, 226, 0.88); color:#fff;'>" : "" %>  </div>  </td>--%>
                                           <td id='<%# Eval("RequestID").ToString()%>'> <div id='lblbutton'    runat="server"> <input type='button' value='More details...' class='newAbsencesButton gotoApprover' style=' background-color:rgba(21, 161, 226, 0.88); color:#fff;'> </div>  </td>
+                                       <%-- <td id='<%# Eval("RequestID").ToString()%>'> <div id='lblapprove'    runat="server"> <input type='button' value='Approve' class='newAbsencesButton ApproverMe' style=' background-color:rgba(21, 161, 226, 0.88); color:#fff;'> </div>  </td>--%>
                                     </tr>                  
                                 </ItemTemplate>  
                         </asp:ListView>  

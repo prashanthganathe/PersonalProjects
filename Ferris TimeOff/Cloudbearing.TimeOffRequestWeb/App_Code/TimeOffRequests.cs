@@ -1237,20 +1237,44 @@ namespace Cloudbearing.TimeOffRequestWeb.Pages
                     StringBuilder camlwhere = new StringBuilder();
 
 
-                    camlwhere.Append("<Where>");
-                    camlwhere.Append("<And>");
-                    camlwhere.Append("<And>");
-                    camlwhere.Append("<Geq>");
-                    camlwhere.Append("<FieldRef Name='StartDateTime' /><Value Type='DateTime'>" + startdate.Year + "-" + startdate.Month + "-" + startdate.Day + " 00:00:00</Value>");
-                    camlwhere.Append("</Geq>");
-                    camlwhere.Append("<Leq>");
-                    camlwhere.Append("<FieldRef Name='EndDateTime' /><Value Type='DateTime'>" + endDate.Year + "-" + endDate.Month + "-" + endDate.Day + " 00:00:00</Value>");
-                    camlwhere.Append("</Leq>");
-                    camlwhere.Append("</And>");
-                    camlwhere.Append("<Eq><FieldRef Name='RequestedBy' LookupId='TRUE' /><Value Type='int'>" + userid + "</Value></Eq>");
-                    camlwhere.Append("</And>");
-                    camlwhere.Append("</Where>");
+                    //camlwhere.Append("<Where>");
+                    //camlwhere.Append("<And>");
+                    //camlwhere.Append("      <And>");
+                    //camlwhere.Append("        <Geq><FieldRef Name='StartDateTime' /><Value Type='DateTime'>" + startdate.Year + "-" + startdate.Month + "-" + startdate.Day + " " + startdate.Hour + ":00:00</Value></Geq>");
+                    //camlwhere.Append("        <Leq><FieldRef Name='EndDateTime' /><Value Type='DateTime'>" + endDate.Year + "-" + endDate.Month + "-" + endDate.Day + " " + endDate.Hour + ":00:00</Value></Leq>");
+                    //camlwhere.Append("       </And>");
+                    //camlwhere.Append("   <Eq><FieldRef Name='RequestedBy' LookupId='TRUE' /><Value Type='int'>" + userid + "</Value></Eq>");
+                    ////camlwhere.Append("  <Eq><FieldRef Name='IsFullDay' /><Value Type='Integer'>1</Value> </Eq>");                    
+                    //camlwhere.Append("</And>");
+                    //camlwhere.Append("</Where>");
 
+
+                    
+                       
+                    camlwhere.Append("<Where>");
+                    camlwhere.Append("<Or>");
+                    camlwhere.Append("       <And>"); 
+                    camlwhere.Append("               <And>");
+                    camlwhere.Append("                  <Geq><FieldRef Name='StartDateTime' /><Value Type='DateTime' >"+startdate.Year+"-"+startdate.Month+"-"+startdate.Day+" 00:00:00</Value></Geq>");
+                    camlwhere.Append("                  <Leq><FieldRef Name='EndDateTime' /><Value Type='DateTime' >"+startdate.Year+"-"+startdate.Month+"-"+startdate.Day+" 00:00:00</Value></Leq>");
+                    camlwhere.Append("                </And> ");  
+                    camlwhere.Append("                <And> ");        
+                    camlwhere.Append("                     <Eq><FieldRef Name='IsFullDay' /><Value Type='Integer'>1</Value> </Eq>");
+                    camlwhere.Append("                     <Eq><FieldRef Name='RequestedBy' LookupId='TRUE' /><Value Type='int'>" + userid + "</Value></Eq>");
+                    camlwhere.Append("                 </And>");
+                    camlwhere.Append("       </And>");
+                    camlwhere.Append("      <And>"); 
+                    camlwhere.Append("               <And>");
+                    camlwhere.Append("                          <Geq><FieldRef Name='StartDateTime' /><Value Type='DateTime' IncludeTimeValue='TRUE' >"+startdate.Year+"-"+startdate.Month+"-"+startdate.Day+"T"+startdate.Hour+":00:00Z</Value></Geq>");
+                    camlwhere.Append("                          <Leq><FieldRef Name='EndDateTime' /><Value Type='DateTime' IncludeTimeValue='TRUE'  >"+startdate.Year+"-"+startdate.Month+"-"+startdate.Day+"T"+endDate.Hour+":00:00Z</Value></Leq>");
+                    camlwhere.Append("                </And>");   
+                    camlwhere.Append("                <And>  ");       
+                    camlwhere.Append("                     <Eq><FieldRef Name='IsFullDay' /><Value Type='Integer'>0</Value> </Eq>");
+                    camlwhere.Append("                     <Eq><FieldRef Name='RequestedBy' LookupId='TRUE' /><Value Type='int'>9</Value></Eq>");
+                    camlwhere.Append("                 </And>");
+                    camlwhere.Append("    </And>");
+                    camlwhere.Append("</Or>");
+                    camlwhere.Append("</Where>");
 
                     camlQuery.ViewXml = @"<View><Query>" + camlwhere.ToString() + "</Query></View>";
                     listItems = selectedList.GetItems(camlQuery);
@@ -1269,6 +1293,90 @@ namespace Cloudbearing.TimeOffRequestWeb.Pages
                     return false;
                 }
             }
+        }
+
+        public TimeOffRequests GetRequestDetailByRequestID(SharePointContext spContext)
+        {
+            Microsoft.SharePoint.Client.ListItemCollection listItems;
+            if (spContext == null)
+                spContext = SharePointContextProvider.Current.GetSharePointContext(HttpContext.Current);
+            using (var clientContext = spContext.CreateAppOnlyClientContextForSPAppWeb()) // CreateAppOnlyClientContextForSPAppWeb throwing err
+            {
+                try
+                {
+                    Web web = clientContext.Web;
+                    ListCollection lists = web.Lists;
+                    List selectedList = lists.GetByTitle("TimeOffRequests");
+                    clientContext.Load<ListCollection>(lists); // this lists object is loaded successfully
+                    clientContext.Load<List>(selectedList);  // this list object is loaded successfully
+                    clientContext.ExecuteQuery();
+
+                    CamlQuery camlQuery = new CamlQuery();
+                    StringBuilder camlwhere = new StringBuilder();
+                    camlwhere.Append("<Where>");
+                    //camlwhere.Append("<And>");
+                    camlwhere.Append("<Eq><FieldRef Name='RequestID'/><Value Type='Text'>" + this.RequestID + "</Value></Eq>");
+                    // camlwhere.Append("<Eq><FieldRef Name='CancelStatus'/><Value Type='Text'>Cancel</Value></Eq>");
+                    //camlwhere.Append("</And>");
+                    camlwhere.Append("</Where>");
+                    camlQuery.ViewXml = @"<View><Query>" + camlwhere.ToString() + "</Query></View>";
+                    listItems = selectedList.GetItems(camlQuery);
+                    clientContext.Load<Microsoft.SharePoint.Client.ListItemCollection>(listItems);
+                    clientContext.ExecuteQuery();
+                    return LoadObject(listItems);
+                }
+                catch (Exception ex)
+                {
+                    Microsoft.SharePoint.Client.Utilities.Utility.LogCustomRemoteAppError(clientContext, Global.ProductId, ex.Message);
+                    clientContext.ExecuteQuery();
+                    return null;
+                }
+            }
+        }
+
+        public Microsoft.SharePoint.Client.ListItemCollection GetItemByReqID(SharePointContext spContext)
+        {
+            Microsoft.SharePoint.Client.ListItemCollection listItems;
+            if (spContext == null)
+                spContext = SharePointContextProvider.Current.GetSharePointContext(HttpContext.Current);
+            using (var clientContext = spContext.CreateAppOnlyClientContextForSPAppWeb()) // CreateAppOnlyClientContextForSPAppWeb throwing err
+            {
+                try
+                {
+                    Web web = clientContext.Web;
+                    ListCollection lists = web.Lists;
+                    List selectedList = lists.GetByTitle("TimeOffRequests");
+                    clientContext.Load<ListCollection>(lists); // this lists object is loaded successfully
+                    clientContext.Load<List>(selectedList);  // this list object is loaded successfully
+                    clientContext.ExecuteQuery();
+
+                    CamlQuery camlQuery = new CamlQuery();
+                    StringBuilder camlwhere = new StringBuilder();
+                    camlwhere.Append("<Where>");
+                    //camlwhere.Append("<And>");
+                    camlwhere.Append("<Eq><FieldRef Name='RequestID'/><Value Type='Text'>" + this.RequestID + "</Value></Eq>");
+                    // camlwhere.Append("<Eq><FieldRef Name='CancelStatus'/><Value Type='Text'>Cancel</Value></Eq>");
+                    //camlwhere.Append("</And>");
+                    camlwhere.Append("</Where>");
+                    camlQuery.ViewXml = @"<View><Query>" + camlwhere.ToString() + "</Query></View>";
+                    listItems = selectedList.GetItems(camlQuery);
+                    clientContext.Load<Microsoft.SharePoint.Client.ListItemCollection>(listItems);
+                    clientContext.ExecuteQuery();
+                    return listItems;
+                }
+                catch (Exception ex)
+                {
+                    Microsoft.SharePoint.Client.Utilities.Utility.LogCustomRemoteAppError(clientContext, Global.ProductId, ex.Message);
+                    clientContext.ExecuteQuery();
+                    return null;
+                }
+            }
+        }
+
+        public bool UpdateRequest()
+        {
+            Microsoft.SharePoint.Client.ListItemCollection item = this.GetItemByReqID(null);
+            return false;//TODO
         }
 
     }

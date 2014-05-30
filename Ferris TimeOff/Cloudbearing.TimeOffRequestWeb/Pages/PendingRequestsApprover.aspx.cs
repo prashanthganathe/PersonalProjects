@@ -110,6 +110,96 @@ namespace Cloudbearing.TimeOffRequestWeb.Pages
         }
 
 
+        [WebMethod(EnableSession = true)]
+        public static bool ApproveRequest(string requestid)
+        {
+            if (HttpContext.Current.Session["CurrentSPContext"] != null)
+            {
+                TimeOffRequests obj = new TimeOffRequests();
+                obj.RequestID = requestid;
+                obj= obj.GetRequestDetailByRequestID(HttpContext.Current.Session["CurrentSPContext"] as SharePointContext);
+
+                 UserClass objUser = new UserClass();
+                 User CurrentUser = objUser.GetCurrentUserByApp(HttpContext.Current.Session["CurrentSPContext"] as SharePointContext);
+
+
+                 int NumberofApprovers = 0, noOfApprovals = 0;
+                 if (obj.Approver1 != "")
+                     NumberofApprovers = 1;
+                 if (obj.Approver2 != "")
+                     NumberofApprovers = 2;
+                 if (obj.Approver3 != "")
+                     NumberofApprovers = 3;
+
+                 if (obj.Approver1Status == "Approved")
+                     noOfApprovals = 1;
+                 if (obj.Approver2 != "Approved")
+                     noOfApprovals = 2;
+                 if (obj.Approver3 != "Approved")
+                     noOfApprovals = 3;
+
+                 bool sendCal = false;
+                
+                if(NumberofApprovers==1 && obj.Approver1Status == "Pending Approval" && obj.Approver1 == CurrentUser.LoginName)
+                  {
+                      obj.Approver1Status = "Approved";
+                      obj.Status = "Approved";
+                      sendCal = true;
+                  }
+               
+
+                if (NumberofApprovers == 2 && obj.Approver1Status == "Approved" && obj.Approver2Status == "Pending Approval" && obj.Approver2 == CurrentUser.LoginName)
+                {
+                    obj.Approver2Status = "Approved";
+                    obj.Status = "Approved";
+                    sendCal = true;
+                }
+
+                if (NumberofApprovers == 3 && obj.Approver2Status == "Approved" && obj.Approver3Status == "Pending Approval" && obj.Approver3 == CurrentUser.LoginName)
+                {
+                    obj.Approver3Status = "Approved";
+                    obj.Status = "Approved";
+                    sendCal = true;
+                }
+
+                switch (noOfApprovals)
+                {
+                    case 0:
+                        {
+                            obj.Approver1Status = "Approved";
+                            break;
+                        }
+                    case 1:
+                        {
+                            obj.Approver2Status = "Approved";
+                            break;
+                        }
+                    case 3:
+                        {
+                            obj.Approver3Status = "Approved";
+                            obj.Status = "Approved";
+                            break;
+                        }
+                }
+                bool updateResult=obj.UpdateRequest();
+
+
+
+                if(sendCal)
+                {
+                    try
+                    {
+                        DeptCalListClass objDept = new DeptCalListClass();
+                        objDept.AddDeptCal(null, obj.RequestedBy+ "-" + obj.TimeOffType, obj.StartDate.ToString(), obj.EndDate.ToString());
+                    }
+                    catch
+                    { }
+                }
+              
+
+            }
+            return false;//TODO
+        }
 
 
         [WebMethod(EnableSession = true)]
