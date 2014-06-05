@@ -1,0 +1,93 @@
+﻿<h3 class="page-header">Optimize DashBoard </h3>
+
+<div class="row">
+    <div class="col-xs-2">
+        Location:    
+        <select class="form-control" ng-model="lid" ng-options="item.locationname as item.locationname for item in locations">
+            <option value="">All...</option>
+        </select>        
+    </div>
+
+    <div class="col-xs-2">
+        Office:      
+        <select class="form-control" ng-model="ofid" ng-options="item.officename as item.officename for item in offices">
+            <option value="">All...</option>
+        </select>   
+    </div> 
+
+    <div class="col-xs-2">
+        Process:      
+        <select class="form-control" ng-model="proceid" ng-options="item.process as item.process for item in processes">
+            <option value="">All...</option>
+        </select>   
+    </div>
+    <div class="col-xs-2">
+        DashBoardType:      
+        <select class="form-control" ng-model="dtid" ng-options="item.dashboardtype as item.dashboardtype for item in dashboardTypes">
+            <option value="">All...</option>
+        </select>   
+    </div>
+
+
+    <div class="col-xs-2">
+        From:
+        <!--<input id="datepickerFrom" ng-model="from" type="text" class="form-control">-->
+        <input type="text" datepicker-popup="MM-dd-yyyy" ng-model="dt2" is-open="opened2" min="minToDate" max="maxToDate" ng-model="search" ng-change="filterDateAdded()" />
+
+
+    </div>
+    <div class="col-xs-2">
+        To:
+        <input id="datepickerTo" type="text" class="form-control">
+    </div>
+</div>
+
+<br /><br />
+
+<tabset>
+    
+    <tab heading="Statistics">
+        <div class="col-sm-12 ">
+            Total Allocation: <label>{{Total}}</label>
+            <div class="hc-pie" items="limitedIdeas"></div>
+        </div>
+    </tab>
+
+    <tab heading="Details">      
+          
+        <table class="table table-bordered table-hover table-condensed">
+            <tr style="font-weight: bold">
+                <td>Process</td>
+                <td>Office</td>
+                <td>Location</td>
+                <td>From</td>
+                <td>To</td>
+                <td>Legend</td>
+            </tr>
+            <tr ng-repeat="item in info | filter:lid | filter:ofid | filter:proceid | filter:dtid || filter:dateFilter" >
+                <td> <span>{{ item.Process  }}</span></td>
+                <td> <span>{{ item.Location  }}</span></td>
+                <td> <span>{{ item.Office  }}</span></td>
+                <td> <span>{{ item.From  }}</span></td>
+                <td> <span>{{ item.To  }}</span></td>
+                <td> <span>{{ item.Legend  }}</span></td>
+
+            </tr>
+            </table>
+</tab>
+</tabset>
+
+
+
+
+<!--<div class="row">
+    <div class="col-xs-2">
+        <ul>
+            <li ng-repeat="item in info">{{item.processid}}</li>
+
+        </ul>
+    </div>
+    <div class="col-sm-10 " >
+        <div class="hc-pie" items="limitedIdeas"></div>
+    </div>
+</div>-->

@@ -1,0 +1,54 @@
+﻿<h3 class="page-header">Non Seat Split & Cost</h3>
+
+<div class="row">
+    <div class="col-xs-2">
+        Location:
+        <select class="form-control">
+            <option ng-repeat="location in locations">{{location.locationname}}</option>
+        </select>
+    </div>
+    <div class="col-xs-2">
+        Office:
+        <select class="form-control">
+            <option ng-repeat="office in offices">{{office.officename}}</option>
+        </select>
+    </div>
+    <div class="col-xs-2">
+        Process:
+        <select class="form-control">
+            <option ng-repeat="processe in processes">{{processe.process}}</option>
+        </select>
+    </div>
+    <div class="col-xs-2">
+        DashBoardType:
+        <select class="form-control">
+            <option ng-repeat="dashboardType in dashboardTypes">{{dashboardType.dashboardtype}}</option>
+        </select>
+    </div>
+    <div class="col-xs-2">
+        From:
+        <input type="text" class="form-control">
+    </div>
+    <div class="col-xs-2">
+        To:
+        <input type="text" class="form-control">
+    </div>
+</div>
+
+<br /><br />
+
+<div class="row">
+    <label ng-repeat="seat in SeatStatus">       
+        <input type="checkbox" ng-model="SeatStatus" value="{{seat.ID}}" /><span>{{seat.Name}}</span>  &nbsp;&nbsp;&nbsp;
+        
+    </label>
+
+</div>
+
+<div  class="row">
+    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+</div>
+
+<div style="display:none"  class="row">
+    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+</div>

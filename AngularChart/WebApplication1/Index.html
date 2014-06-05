@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Request Seat Form</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->  
+    <!--<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />-->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="Sytle/ng-grid.min.css" rel="stylesheet" />
+    <link href="Sytle/docs.min.css" rel="stylesheet" />
+    <link href="Sytle/app.css" rel="stylesheet" />
+    <link href="bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet" />  
+    
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,app}) styles/main.css -->
+</head>
+<body ng-app="RequestModule">
+    <div class="header">
+        <h2>OPTIMIZE</h2>
+    </div>
+
+    <div class="col-md-3 col-sm-3 left_nav" style="width:15%;">      
+        <div class="span3 bs-docs-sidebar">
+            <ul class="nav nav-list bs-docs-sidenav affix-top menu" data-spy="affix" data-offset-top="-20">               
+                <li class="active"><a href="#/"><i class="icon-chevron-right"></i> Home</a></li> 
+                <li><a href="#/legend"><i class="icon-chevron-right"></i> Legend</a></li>
+                <li><a href="#/seatsplitdash"><i class="icon-chevron-right"></i> SeatSplit Dashboard</a></li>
+                <li><a href="#/seatsplitDashboardBarChart"><i class="icon-chevron-right"></i>Dashboard Bar Chart</a></li>
+                <li><a href="#/typeform"><i class="icon-chevron-right"></i> Seat Type</a></li>              
+                <li><a href="#/userform"><i class="icon-chevron-right"></i>User</a></li>
+                <li><a href="#layouts"><i class="icon-chevron-right"></i> Unit</a></li>               
+              
+                <li><a href="#responsive"><i class="icon-chevron-right"></i>Process</a></li>
+                <li><a href="#responsive"><i class="icon-chevron-right"></i>Resource</a></li>
+                <li><a href="#/request"><i class="icon-chevron-right"></i>Request</a></li>
+            </ul>
+        </div>
+        </div>
+    <div class="col-md-9 col-sm-9 content-right container">       
+            <div ng-view="">           
+            </div>
+    </div>
+
+
+
+
+    
+        <!--[if lt IE 9]>
+        <script src="bower_components/es5-shim/es5-shim.js"></script>
+        <script src="bower_components/json3/lib/json3.min.js"></script>
+        <![endif]-->
+        <!--Script reference-->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="Scripts/menu.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>         
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+    <link href="Scripts/Other/bootstrap-datepicker.css" rel="stylesheet" />
+
+    <script src="Scripts/Other/bootstrap-datetimepicker.js"></script>
+    <script src="Scripts/Other/ui-bootstrap-tpls-0.10.0.min.js"></script>
+
+        <script src="Scripts/Other/ui-bootstrap-tpls-0.10.0.min.js"></script><!--use for paging-->
+        <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+        <!--3rd party Scripts-->
+    <script src="Scripts/Other/underscore-min.js"></script>
+    <!--<script src="bower_components/angular-underscore-module/angular-underscore-module.js"></script>-->
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/highcharts-more.js"></script>
+    <script src="http://code.highcharts.com/highcharts-3d.js"></script>
+    
+        <script src="bower_components/angular-xeditable/dist/js/xeditable.min.js"></script>
+    <!--3rd party Scripts-->
+        <!--End of  bower:js -->
+        <!-- Custom:js -->
+        <script src="Scripts/app.js"></script>
+
+        <!--  Models-->
+
+    <script src="Scripts/Models/assignmentrequestModel.js"></script>
+
+
+        <script src="Scripts/Models/dashboardModel.js"></script>
+        <script src="Scripts/Models/pieDashboardModel.js"></script>
+
+
+        <script src="Scripts/Models/legendModel.js"></script>
+        <script src="Scripts/Models/userModel.js"></script>
+
+        <script src="Scripts/Models/legendModel.js"></script>
+        <script src="Scripts/Models/processModel.js"></script>
+        <script src="Scripts/Models/requestModel.js"></script>
+        <script src="Scripts/Models/resourceModel.js"></script>
+        <script src="Scripts/Models/seatTypeModel.js"></script>
+        <script src="Scripts/Models/unitModel.js"></script>
+
+        <!-- End of Model-->
+        <!--Controllers-->
+    <script src="Scripts/controllers/SeatSplitDashboardController.js"></script>
+    <script src="Scripts/controllers/SeatSplitDashboardBarChartController.js"></script>
+    <script src="Scripts/controllers/LegendController.js"></script>
+        <script src="Scripts/controllers/RequestController.js"></script>
+        <script src="Scripts/controllers/TypeFormController.js"></script>
+         <script src="Scripts/controllers/UserFormController.js"></script>
+        <!-- End of Controllers-->
+        <!--Services-->
+        <script src="Scripts/Services/RequestService.js"></script>
+        <!--End of services-->
+        <!--Factory-->
+        <script src="Scripts/Factory/RequestFactory.js"></script>
+        <!--End of Factory-->
+        <!--End of Custom:js>-->
+
+    <script src="Scripts/Other/PieChart.js"></script>
+</body>
+</html>

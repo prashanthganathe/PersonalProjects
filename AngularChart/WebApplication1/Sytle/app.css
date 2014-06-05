@@ -1,0 +1,18 @@
+﻿
+
+.header {
+    background-color: #29292a;
+    height: 80px;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    opacity: 0.9;
+    text-align:center;
+    color:white;
+    position:relative;
+}
+
+.bs-sidebar .nav > .active > ul {
+    display: block;
+    margin-bottom: 8px;
+}
