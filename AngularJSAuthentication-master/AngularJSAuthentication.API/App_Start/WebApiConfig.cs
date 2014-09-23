@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Serialization;
+﻿using AngularJSAuthentication.API.Filters;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,14 @@ namespace AngularJSAuthentication.API
     {
         public static void Register(HttpConfiguration config)
         {
-
+            //Custom
+            config.EnableCors();
+            config.Filters.Add(new ActionLogFilter());
+          //  config.Filters.Add(new ElmahErrorAttribute());
+           
             // Web API routes
             config.MapHttpAttributeRoutes();
-            config.EnableCors();
+          
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
@@ -23,6 +28,9 @@ namespace AngularJSAuthentication.API
 
             var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
             jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+
+          
+            
         }
     }
 }

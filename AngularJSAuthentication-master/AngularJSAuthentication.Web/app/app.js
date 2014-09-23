@@ -44,10 +44,10 @@ app.config(function ($routeProvider) {
 });
 
 //var serviceBase = 'http://localhost:26264/';
-//var serviceBase = 'http://localhost/AngularJSAuthentication.API/';
+var serviceBase = 'http://localhost/AngularJSAuthentication.API/';
 //var serviceBase = 'http://ngauthenticationapi.azurewebsites.net/';
 //var serviceBase ='http://localhost:8977/';
-var serviceBase = 'http://localhost/AngularJSAuthentication.API.Mysql/';
+//var serviceBase = 'http://localhost/AngularJSAuthentication.API.Mysql/';
 
 app.constant('ngAuthSettings', {
     apiServiceBaseUri: serviceBase,

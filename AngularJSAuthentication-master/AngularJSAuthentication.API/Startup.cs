@@ -10,6 +10,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using System.Web.Mvc;
 
 [assembly: OwinStartup(typeof(AngularJSAuthentication.API.Startup))]
 
@@ -33,7 +34,7 @@ namespace AngularJSAuthentication.API
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<AuthContext, AngularJSAuthentication.API.Migrations.Configuration>());
 
             config.Formatters.Remove(config.Formatters.XmlFormatter);
-           
+            AreaRegistration.RegisterAllAreas();
         }
 
         public void ConfigureOAuth(IAppBuilder app)
