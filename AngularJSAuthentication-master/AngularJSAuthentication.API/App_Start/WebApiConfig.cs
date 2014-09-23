@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Formatting;
 using System.Web.Http;
+using System.Web.Mvc;
 
 namespace AngularJSAuthentication.API
 {
@@ -16,6 +17,7 @@ namespace AngularJSAuthentication.API
             config.EnableCors();
             config.Filters.Add(new ActionLogFilter());
           //  config.Filters.Add(new ElmahErrorAttribute());
+            AreaRegistration.RegisterAllAreas();
            
             // Web API routes
             config.MapHttpAttributeRoutes();
@@ -24,6 +26,12 @@ namespace AngularJSAuthentication.API
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new {controller=RouteParameter.Optional, id = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "Default",
+                routeTemplate: "{controller}/{action}/{id}",
+                defaults: new {  id = RouteParameter.Optional }
             );
 
             var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
