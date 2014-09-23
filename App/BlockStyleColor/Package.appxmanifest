@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+  <Identity Name="c7011926-54d3-4e97-9d97-86cbae6ff2a4" Publisher="CN=mw-inspiron-001" Version="1.1.0.0" />
+  <Properties>
+    <DisplayName>BlockStyleColor</DisplayName>
+    <PublisherDisplayName>Sample Template</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="BlockStyleColor.App">
+      <m2:VisualElements DisplayName="BlockStyleColor" Description="BlockStyleColor" BackgroundColor="#464646" ForegroundText="light" Square150x150Logo="Assets\Images\carl150.jpg" Square30x30Logo="Assets\SmallLogo.png">
+        <m2:DefaultTile ShortName="Carl Zeiss 1" Wide310x150Logo="Assets\wideLogo.png">
+          <m2:ShowNameOnTiles>
+            <m2:ShowOn Tile="square150x150Logo" />
+          </m2:ShowNameOnTiles>
+        </m2:DefaultTile>
+        <m2:SplashScreen Image="Assets\Images\splash.png" />
+      </m2:VisualElements>
+      <Extensions>
+        <Extension Category="windows.fileOpenPicker">
+          <FileOpenPicker>
+            <SupportedFileTypes>
+              <SupportsAnyFileType />
+            </SupportedFileTypes>
+          </FileOpenPicker>
+        </Extension>
+        <Extension Category="windows.fileTypeAssociation">
+          <FileTypeAssociation Name="test">
+            <EditFlags AlwaysUnsafe="true" />
+            <SupportedFileTypes>
+              <FileType>.pdf</FileType>
+            </SupportedFileTypes>
+          </FileTypeAssociation>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <Capability Name="enterpriseAuthentication" />
+    <Capability Name="internetClientServer" />
+    <Capability Name="privateNetworkClientServer" />
+    <Capability Name="removableStorage" />
+    <Capability Name="picturesLibrary" />
+    <Capability Name="documentsLibrary" />
+  </Capabilities>
+</Package>

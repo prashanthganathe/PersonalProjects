@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="Windows8Theme.PB"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Windows8Theme"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ProgressBar x:Name="progressbar"  Foreground="Green" IsIndeterminate="True"   Background="White"  HorizontalAlignment="Center"
+                 Height="20" Margin="0,-30,0,0" 
+                 VerticalAlignment="Center"  Maximum="100"  Width="400"  Grid.ColumnSpan="2"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="354,491,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+
+    </Grid>
+</Page>
